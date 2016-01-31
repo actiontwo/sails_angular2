@@ -25,16 +25,5 @@ html
 		// ANGULAR2 END
 		// SCRIPTS
 		script(src="/js/dependencies/sails.io.js")
+		script(src="/js/app.js")
 		// SCRIPTS END
-		script.
-			System.config({
-				packages: {
-					app: {
-						format: 'register',
-						defaultExtension: 'js'
-					}
-				}
-			});
-			System.import('app/main').then(null, console.error.bind(console));
-
-
