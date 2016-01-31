@@ -1,0 +1,37 @@
+doctype html
+html
+	head
+		title= title
+
+		// Viewport mobile tag for sensible mobile support
+		meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
+		// STYLES
+		link(rel="stylesheet", href="/styles/importer.css")
+		// STYLES END
+		block styles
+
+	body
+		block body
+
+		// The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
+		script(src="angular2/es6-shim/es6-shim.min.js")
+		script(src="angular2/systemjs/dist/system-polyfills.js")
+		script(src="angular2/angular2/bundles/angular2-polyfills.js")
+		script(src="angular2/systemjs/dist/system.src.js")
+		script(src="angular2/rxjs/bundles/Rx.js")
+		script(src="angular2/angular2/bundles/angular2.dev.js")
+		// SCRIPTS
+		script(src="/js/dependencies/sails.io.js")
+		// SCRIPTS END
+		script.
+			System.config({
+				packages: {
+					app: {
+						format: 'register',
+						defaultExtension: 'js'
+					}
+				}
+			});
+			System.import('app/main').then(null, console.error.bind(console));
+
+
