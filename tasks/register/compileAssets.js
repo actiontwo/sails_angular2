@@ -3,6 +3,7 @@ module.exports = function (grunt) {
     'clean:dev',
     'jst:dev',
     'less:dev',
+    'jade:templates',
     'exec:tsc',
     'copy:dev',
     'coffee:dev'

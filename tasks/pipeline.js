@@ -27,7 +27,8 @@ var angular2Module = [
   'angular2/bundles/angular2-polyfills.js',
   'systemjs/dist/system.src.js',
   'rxjs/bundles/Rx.js',
-  'angular2/bundles/angular2.dev.js'
+  'angular2/bundles/angular2.js',
+  'angular2/bundles/router.js'
 ];
 var jsFilesToInject = [
 
@@ -65,9 +66,16 @@ module.exports.cssFilesToInject = cssFilesToInject.map(transformPath);
 module.exports.jsFilesToInject = jsFilesToInject.map(transformPath);
 module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
 module.exports.angular2Module = angular2Module;
+module.exports.jsAngular2Module = angular2Module.map(transformPathNodeModule);
 
 // Transform paths relative to the "assets" folder to be relative to the public
 // folder, preserving "exclude" operators.
+function transformPathNodeModule(path) {
+  return (path.substring(0, 1) == '!')
+    ? ('!' + tmpPath + 'angular2/' + path.substring(1))
+    : (tmpPath + 'angular2/' + path);
+}
+
 function transformPath(path) {
   return (path.substring(0, 1) == '!')
     ? ('!' + tmpPath + path.substring(1))

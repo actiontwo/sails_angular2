@@ -1,8 +1,8 @@
 doctype html
 html
 	head
-		title= title
-
+		title SX Statictis
+		base(href="/")
 		// Viewport mobile tag for sensible mobile support
 		meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1")
 		// STYLES
@@ -14,12 +14,15 @@ html
 		block body
 
 		// The linker searches for this tag and adds js.  If there's no linker, we point to sails.io.js
-		script(src="angular2/es6-shim/es6-shim.min.js")
-		script(src="angular2/systemjs/dist/system-polyfills.js")
-		script(src="angular2/angular2/bundles/angular2-polyfills.js")
-		script(src="angular2/systemjs/dist/system.src.js")
-		script(src="angular2/rxjs/bundles/Rx.js")
-		script(src="angular2/angular2/bundles/angular2.dev.js")
+		// ANGULAR2
+		script(src="/angular2/es6-shim/es6-shim.min.js")
+		script(src="/angular2/systemjs/dist/system-polyfills.js")
+		script(src="/angular2/angular2/bundles/angular2-polyfills.js")
+		script(src="/angular2/systemjs/dist/system.src.js")
+		script(src="/angular2/rxjs/bundles/Rx.js")
+		script(src="/angular2/angular2/bundles/angular2.js")
+		script(src="/angular2/angular2/bundles/router.js")
+		// ANGULAR2 END
 		// SCRIPTS
 		script(src="/js/dependencies/sails.io.js")
 		// SCRIPTS END

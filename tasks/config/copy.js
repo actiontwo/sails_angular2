@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         {
           expand: true,
           cwd: './assets',
-          src: ['**/*.!(coffee|less|ts|*.ts)'],
+          src: ['**/*.!(coffee|less|ts|*.ts|jade)'],
           dest: '.tmp/public'
         },
         {
